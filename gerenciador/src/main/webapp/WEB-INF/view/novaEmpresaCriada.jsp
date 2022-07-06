@@ -1,0 +1,30 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+<%
+//scriptlet
+//faz um cast de um object para uma string
+String nomeEmpresa = (String)request.getAttribute("empresa");
+System.out.println(nomeEmpresa);
+%>
+
+
+<html>
+<body>
+	
+	<c:import url="logout-parcial.jsp" />
+
+  <c:if test= "${not empty empresa}">
+            Empresa ${ empresa } cadastrada com sucesso!
+        </c:if>
+
+        <c:if test= "${empty empresa}">
+            Nenhuma empresa cadastrada!
+        </c:if>
+        
+        <c:forEach var="i" begin="1" end="10" step="2">
+       ${i} <br />
+     </c:forEach>
+</body>
+</html>
+
+<--//Java server Page JSP--/>
